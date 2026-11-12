@@ -59,7 +59,7 @@ async function Dashboard({
 
       {params.saved && (
         <p className="flex items-center gap-2 rounded-2xl bg-green-50 p-4 font-semibold text-green-800">
-          <CheckCircle2 className="h-5 w-5" /> Project saved — it&apos;s live on
+          <CheckCircle2 className="h-5 w-5" /> Project saved. It&apos;s live on
           the site.
         </p>
       )}
@@ -116,7 +116,7 @@ async function Dashboard({
               </p>
               {p.id.startsWith("demo-") && (
                 <p className="mt-1 text-xs font-semibold text-amber-700">
-                  Sample project — replace with your own photos
+                  Sample project: replace with your own photos
                 </p>
               )}
               <div className="mt-auto flex items-center gap-1 pt-2">

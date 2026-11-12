@@ -81,7 +81,7 @@ export function QuoteForm() {
             {services.map((s) => (
               <option key={s.title}>{s.title}</option>
             ))}
-            <option>Not sure — come take a look</option>
+            <option>Not sure, come take a look</option>
           </select>
         </label>
       </div>

@@ -91,7 +91,7 @@ export function ProjectForm({ project }: { project?: Project }) {
         <span>
           <span className="block font-semibold">Feature this project</span>
           <span className="block text-sm text-ink-700/70">
-            Featured projects show first — the top one appears in the hero.
+            Featured projects show first. The top one appears in the hero.
           </span>
         </span>
         <input

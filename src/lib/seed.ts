@@ -36,7 +36,7 @@ export const seedProjects: Project[] = [
   },
   {
     id: "demo-paradise-rebuild",
-    title: "Fire Rebuild — Full Three-Coat Exterior",
+    title: "Fire Rebuild: Full Three-Coat Exterior",
     city: "Paradise",
     category: "Fire Rebuild",
     description:

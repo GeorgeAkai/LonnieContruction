@@ -1,8 +1,6 @@
 import {
   ArrowRight,
-  BadgeCheck,
   Brush,
-  CalendarCheck,
   Flame,
   Grid3x3,
   Hammer,
@@ -11,8 +9,6 @@ import {
   MapPin,
   PaintRoller,
   Phone,
-  ShieldCheck,
-  Star,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { MobileCallBar } from "@/components/MobileCallBar";
@@ -84,10 +80,7 @@ export default async function Page() {
                 to last.
               </h1>
               <p className="mt-5 max-w-lg text-lg text-white/75">
-                {site.owner} and the {site.name} crew have been
-                lathing, plastering and repairing homes across Butte County
-                since {site.established}. Licensed, local, and proud of every
-                wall.
+                Licensed lath, plaster &amp; stucco. Free estimates.
               </p>
               <div className="mt-8 grid gap-3 sm:flex">
                 <a
@@ -107,7 +100,7 @@ export default async function Page() {
                 {[
                   { k: `${years}+`, v: "Years" },
                   { k: "CA", v: `Lic. #${site.license}` },
-                  { k: "100%", v: "Local" },
+                  { k: "Free", v: "Estimates" },
                 ].map((s) => (
                   <div
                     key={s.v}
@@ -137,48 +130,30 @@ export default async function Page() {
                 </div>
                 <p className="mt-3 flex items-center gap-1.5 text-sm text-white/60">
                   <MapPin className="h-4 w-4 text-brand" />
-                  {hero.title} — {hero.city}
+                  {hero.title}, {hero.city}
                 </p>
               </div>
             )}
           </div>
         </section>
 
-        {/* TRUST STRIP */}
-        <section className="border-b border-black/5 bg-white">
-          <div className="no-scrollbar mx-auto flex max-w-6xl gap-6 overflow-x-auto px-4 py-5 text-sm font-semibold whitespace-nowrap text-ink-700 sm:justify-between sm:px-6">
-            {[
-              { icon: ShieldCheck, t: `CA License #${site.license}` },
-              { icon: CalendarCheck, t: `Established ${site.established}` },
-              { icon: BadgeCheck, t: "Free on-site estimates" },
-              { icon: Star, t: "Owner on every job" },
-            ].map(({ icon: Icon, t }) => (
-              <span key={t} className="inline-flex items-center gap-2">
-                <Icon className="h-5 w-5 text-brand" /> {t}
-              </span>
-            ))}
-          </div>
-        </section>
-
         {/* WORK */}
-        <section id="work" className="bg-mist py-16 sm:py-24">
+        <section id="work" className="bg-mist py-12 sm:py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <SectionHeading
               eyebrow="Before & After"
               title="See the difference"
-              body="Real jobs from around the valley. Drag the red handle on any photo to compare before and after."
             />
             <Gallery projects={projects} />
           </div>
         </section>
 
         {/* SERVICES */}
-        <section id="services" className="py-16 sm:py-24">
+        <section id="services" className="py-12 sm:py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <SectionHeading
-              eyebrow="What we do"
-              title="Lath, plaster & stucco"
-              body="From the first sheet of paper and wire to the final color coat, every layer is done by people who've been doing it for decades."
+              eyebrow="Services"
+              title="What we do"
             />
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((s) => {
@@ -206,16 +181,16 @@ export default async function Page() {
         <section className="stucco-texture bg-ink py-16 text-white sm:py-24">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <SectionHeading
-              eyebrow="How it works"
-              title="Simple from start to finish"
+              eyebrow="Process"
+              title="How it works"
               dark
             />
             <ol className="grid gap-4 md:grid-cols-4">
               {[
-                ["Call or text", "Tell us what's going on. We answer our own phone."],
-                ["Free estimate", "Lonnie comes out, looks at the wall and gives you a straight price."],
-                ["We get to work", "Clean job site, proper lath and the right mix for our valley heat."],
-                ["Walk-through", "We don't leave until you're happy with the finish."],
+                ["Call or text", "Tell us what you need."],
+                ["Free estimate", "Straight price, on site."],
+                ["We build", "Clean job, done right."],
+                ["Walk-through", "You approve the finish."],
               ].map(([t, b], i) => (
                 <li
                   key={t}
@@ -235,20 +210,19 @@ export default async function Page() {
         </section>
 
         {/* SERVICE AREAS */}
-        <section id="areas" className="py-16 sm:py-24">
+        <section id="areas" className="py-12 sm:py-16">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2">
             <div>
               <SectionHeading
                 eyebrow="Service areas"
-                title="Proudly serving the Mid Valley"
-                body={`Based at ${site.address.street} in Chico, we work throughout Butte, Glenn and Tehama counties.`}
+                title="Mid Valley"
                 align="left"
               />
               <a
                 href={site.phoneHref}
                 className="inline-flex h-13 items-center gap-2 rounded-2xl bg-ink px-6 font-bold text-white transition hover:bg-ink-700 active:scale-[0.98]"
               >
-                <Phone className="h-5 w-5" /> Not on the list? Call us
+                <Phone className="h-5 w-5" /> Call us
               </a>
             </div>
             <ul className="flex flex-wrap gap-2.5">
@@ -273,12 +247,8 @@ export default async function Page() {
           <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 py-12 sm:px-6 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="font-display text-3xl font-bold uppercase sm:text-4xl">
-                Cracks don&apos;t fix themselves.
+                Cracks get worse. Call today.
               </h2>
-              <p className="mt-2 text-white/85">
-                Small stucco cracks let water in. Get them looked at before
-                they turn into a big repair.
-              </p>
             </div>
             <a
               href={site.phoneHref}
@@ -290,13 +260,12 @@ export default async function Page() {
         </section>
 
         {/* CONTACT */}
-        <section id="contact" className="bg-mist py-16 sm:py-24">
+        <section id="contact" className="bg-mist py-12 sm:py-16">
           <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_1.3fr]">
             <div>
               <SectionHeading
-                eyebrow="Free estimate"
-                title="Let's talk about your project"
-                body="Fill out the form and it'll open your email or text app ready to send — or just give Lonnie a call."
+                eyebrow="Contact"
+                title="Get a free estimate"
                 align="left"
               />
               <div className="grid gap-3">
@@ -334,8 +303,7 @@ export default async function Page() {
           <div>
             <Logo inverted />
             <p className="mt-4 text-sm">
-              Lath, plaster &amp; stucco contractor serving Chico, Oroville,
-              Paradise and the Mid Valley since {site.established}.
+              Serving the Mid Valley since {site.established}.
             </p>
           </div>
           <div className="text-sm">
